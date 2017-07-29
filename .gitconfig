@@ -1,0 +1,26 @@
+[user]
+	name = Júlio Leitão
+	email = julio.leitao.jr@gmail.com
+[color]
+	branch = auto
+	diff = auto
+	interactive = auto
+	pager = true
+	status = auto
+	ui = true
+[color "status"]
+	added = green
+	changed = yellow
+	untracked = red
+[push]
+	default = current
+[core]
+	autocrlf = input
+	pager = less -FRSX
+[alias]
+	ci = commit
+	co = checkout
+	st = status
+	ls = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate
+[url "git@github.com:julioleitao/"]
+	insteadOf = proj:
