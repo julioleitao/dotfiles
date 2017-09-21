@@ -12,6 +12,9 @@ Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'vim-syntastic/syntastic'
 Plugin 'kien/ctrlp.vim'
 Plugin 'vim-scripts/vim-auto-save'
+Plugin 'Valloric/YouCompleteMe'
+Plugin 'editorconfig/editorconfig-vim'
+Plugin 'townk/vim-autoclose'
 
 call vundle#end()
 
@@ -55,5 +58,6 @@ let g:syntastic_check_on_wq = 0
 "
 
 let g:auto_save = 1  " enable AutoSave on Vim startup
+set backspace=indent,eol,start
 
 filetype plugin indent on " Required
