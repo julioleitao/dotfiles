@@ -6,15 +6,13 @@ set rtp+=~/.vim/bundle/vundle/
 call vundle#begin()
 
 Plugin 'gmarik/vundle'    " Required
-Plugin 'msanders/snipmate.vim'
 Plugin 'scrooloose/nerdtree'
-Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'vim-syntastic/syntastic'
 Plugin 'kien/ctrlp.vim'
 Plugin 'vim-scripts/vim-auto-save'
-Plugin 'Valloric/YouCompleteMe'
 Plugin 'editorconfig/editorconfig-vim'
 Plugin 'townk/vim-autoclose'
+Plugin 'bling/vim-airline'
 
 call vundle#end()
 
@@ -58,6 +56,7 @@ let g:syntastic_check_on_wq = 0
 "
 
 let g:auto_save = 1  " enable AutoSave on Vim startup
+let g:auto_save_silent = 1  " do not display the auto-save notification
 set backspace=indent,eol,start
 
 filetype plugin indent on " Required
