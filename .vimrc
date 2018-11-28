@@ -40,6 +40,9 @@ Plugin 'editorconfig/editorconfig-vim'
 " Theme
 Plugin 'morhetz/gruvbox'
 
+" Auto save file
+Plugin '907th/vim-auto-save'
+
 " All of your Plugins must be added before the following line
 call vundle#end()            " required from vundle
 
@@ -76,10 +79,16 @@ set encoding=utf8
 " http://vim.wikia.com/wiki/Saving_a_file
 map <Esc><Esc> :w<CR>
 
-" Switch between panes Swap top/bottom or left/right split. See https://robots.thoughtbot.com/vim-splits-move-faster-and-more-naturally
+" Switch between panes Swap top/bottom or left/right split. 
+" See https://robots.thoughtbot.com/vim-splits-move-faster-and-more-naturally
 
 " color scheme
 colorscheme gruvbox
+
+" auto save custom changes
+let g:auto_save = 1
+let g:auto_save_no_updatetime = 1
+let g:auto_save_in_insert_mode = 0
 
 ">>> end all custom commands
 filetype plugin indent on    " required from vundle
