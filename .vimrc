@@ -76,6 +76,8 @@ set encoding=utf8
 " http://vim.wikia.com/wiki/Saving_a_file
 map <Esc><Esc> :w<CR>
 
+" Switch between panes Swap top/bottom or left/right split. See https://robots.thoughtbot.com/vim-splits-move-faster-and-more-naturally
+
 " color scheme
 colorscheme gruvbox
 
