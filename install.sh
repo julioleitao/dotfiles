@@ -7,4 +7,3 @@ if [ ! -d "$VUNDLE_DIR" ]; then
 fi
 
 curl -s https://raw.githubusercontent.com/julioleitao/dotfiles/master/.vimrc > ~/.vimrc
-vim +PluginInstall +qall
