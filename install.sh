@@ -6,7 +6,7 @@ if [ ! -d "$VUNDLE_DIR" ]; then
   git clone https://github.com/VundleVim/Vundle.vim.git "$VUNDLE_DIR"
 fi
 
-mv ~/.vimrc ~/.old_vimrc
+mv $HOME/.vimrc $HOME/.old_vimrc
 
 wget https://raw.githubusercontent.com/julioleitao/dotfiles/master/.vimrc
-mv .vimrc ~/.vimrc
+mv .vimrc $HOME/.vimrc
