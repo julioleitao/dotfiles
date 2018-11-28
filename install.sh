@@ -6,5 +6,5 @@ if [ ! -d "$VUNDLE_DIR" ]; then
   git clone https://github.com/VundleVim/Vundle.vim.git "$VUNDLE_DIR"
 fi
 
-curl -s https://raw.githubusercontent.com/julioleitao/dotfiles/master/install.sh > ~/.vimrc
+curl -s https://raw.githubusercontent.com/julioleitao/dotfiles/master/.vimrc > ~/.vimrc
 vim +PluginInstall +qall
