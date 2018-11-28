@@ -8,6 +8,5 @@ fi
 
 mv ~/.vimrc ~/.old_vimrc
 
-curl -s https://raw.githubusercontent.com/julioleitao/dotfiles/master/.vimrc > ~/.vimrc
-
-vim +PluginInstall +qall
+wget https://raw.githubusercontent.com/julioleitao/dotfiles/master/.vimrc
+mv .vimrc ~/.vimrc
