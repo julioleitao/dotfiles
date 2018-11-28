@@ -1,96 +1,78 @@
-set nocompatible              " be iMproved, required
-filetype off                  " required
+set nocompatible              " be iMproved, required from vundle
+filetype off                  " required from vundle
 
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
-" alternatively, pass a path where Vundle should install plugins
-"call vundle#begin('~/some/path/here')
 
-" let Vundle manage Vundle, required
+" let Vundle manage Vundle, required from vundle
 Plugin 'VundleVim/Vundle.vim'
 
-" The following are examples of different formats supported.
-" Keep Plugin commands between vundle#begin/end.
-" plugin on GitHub repo
-Plugin 'tpope/vim-fugitive'
-" plugin from http://vim-scripts.org/vim/scripts.html
-" Plugin 'L9'
-" Git plugin not hosted on GitHub
-Plugin 'git://git.wincent.com/command-t.git'
-" git repos on your local machine (i.e. when working on your own plugin)
-" The sparkup vim script is in a subdirectory of this repo called vim.
-" Pass the path to set the runtimepath properly.
-Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
-" Install L9 and avoid a Naming conflict if you've already installed a
-" different version somewhere else.
-" Plugin 'ascenator/L9', {'name': 'newL9'}
-"
-Plugin 'gmarik/vundle'    " Required
+" >>> Plugins list
+
+" The NERDTree is a file system explorer for the Vim editor
+" toggle the sidebar :NERDTreeToggle
+" at the explorer:
+" o -> open/close the dir
+" O -> open/close recursive the dir in all subdirectories
+" r -> reload the three when there is a new file
+" ctrl + w w -> jump to file or jump to sidebar.
 Plugin 'scrooloose/nerdtree'
-Plugin 'vim-syntastic/syntastic'
-Plugin 'kien/ctrlp.vim'
-Plugin 'vim-scripts/vim-auto-save'
-Plugin 'editorconfig/editorconfig-vim'
+
+" Syntax checking hacks for vim.
+Plugin 'scrooloose/syntastic'
+
+" lean & mean status/tabline for vim that's light as air
+Plugin 'vim-airline/vim-airline'
+
+" enable auto-close chars
 Plugin 'townk/vim-autoclose'
-Plugin 'bling/vim-airline'
+
+" autocomplete async
+Plugin 'maralla/completor.vim'
+
+" Search file
+Plugin 'kien/ctrlp.vim'
+
+" Editor config
+Plugin 'editorconfig/editorconfig-vim'
 
 " All of your Plugins must be added before the following line
-call vundle#end()            " required
-filetype plugin indent on    " required
+call vundle#end()            " required from vundle
 
-" customazing
-set ruler
-set number
-syntax on
-set smartcase
-set hlsearch
-set magic
-set encoding=utf8
+" >>> custom commands
 
-set expandtab
-set smarttab
-set shiftwidth=4
-set tabstop=4
-set lbr
-set tw=500
-set ai
-set si
-set wrap
-
-set wildmenu
-"
-
-" start NERDTree by default
+" >>> scrooloose/nerdtree <<<
+" Open a NERDTree automatically when vim starts up if no files were specified
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
-"
+" shortcut to toggle NERDTree
+map <C-n> :NERDTreeToggle<CR>
 
-
-" setup for syntastic
+" >>> scrooloose/syntastic
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
-
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-"
 
-let g:auto_save = 1  " enable AutoSave on Vim startup
-let g:auto_save_silent = 1  " do not display the auto-save notification
-set backspace=indent,eol,start
+" >>> kien/ctrlp.vim
+" ignore files at .gitignore https://github.com/kien/ctrlp.vim/issues/174
+let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
 
-filetype plugin indent on " Required
-" To ignore plugin indent changes, instead use:
-"filetype plugin on
-"
-" Brief help
-" :PluginList       - lists configured plugins
-" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
-" :PluginSearch foo - searches for foo; append `!` to refresh local cache
-" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
-"
-" see :h vundle for more details or wiki for FAQ
-" Put your non-Plugin stuff after this line
+" >>> maralla/completor.vim
+" complete with tab
+inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+
+" >>> just custom vim<<<
+syntax on
+set autoindent
+set smartindent
+set shiftwidth=4
+set encoding=utf8
+let g:elite_mode=1
+
+" http://vim.wikia.com/wiki/Saving_a_file
+map <Esc><Esc> :w<CR>
+
+">>> end all custom commands
+filetype plugin indent on    " required from vundle
