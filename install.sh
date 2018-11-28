@@ -1,3 +1,10 @@
 #!/bin/bash
 
-# TODO makes the call with curl changes the files.
+VUNDLE_DIR="~/.vim/bundle/Vundle.vim"
+
+if [ ! -d "$VUNDLE_DIR" ]; then
+  git clone https://github.com/VundleVim/Vundle.vim.git $VUNDLE_DIR
+fi
+
+curl -s https://raw.githubusercontent.com/julioleitao/dotfiles/master/install.sh > ~/.vimrc
+vim +PluginInstall +qall
