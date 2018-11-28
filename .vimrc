@@ -37,6 +37,9 @@ Plugin 'kien/ctrlp.vim'
 " Editor config
 Plugin 'editorconfig/editorconfig-vim'
 
+" Theme
+Plugin 'morhetz/gruvbox'
+
 " All of your Plugins must be added before the following line
 call vundle#end()            " required from vundle
 
@@ -69,10 +72,12 @@ set autoindent
 set smartindent
 set shiftwidth=4
 set encoding=utf8
-let g:elite_mode=1
 
 " http://vim.wikia.com/wiki/Saving_a_file
 map <Esc><Esc> :w<CR>
+
+" color scheme
+colorscheme gruvbox
 
 ">>> end all custom commands
 filetype plugin indent on    " required from vundle
