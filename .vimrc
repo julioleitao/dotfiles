@@ -27,6 +27,7 @@ Plugin 'vim-airline/vim-airline'
 
 " enable auto-close chars
 Plugin 'townk/vim-autoclose'
+Plugin 'tpope/vim-endwise'
 
 " autocomplete async
 Plugin 'maralla/completor.vim'
@@ -42,6 +43,9 @@ Plugin 'morhetz/gruvbox'
 
 " Auto save file
 Plugin '907th/vim-auto-save'
+
+" Elixir
+Plugin 'elixir-editors/vim-elixir'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required from vundle
@@ -75,6 +79,8 @@ set autoindent
 set smartindent
 set shiftwidth=4
 set encoding=utf8
+set tabstop=4
+set number
 
 " http://vim.wikia.com/wiki/Saving_a_file
 map <Esc><Esc> :w<CR>
@@ -84,6 +90,7 @@ map <Esc><Esc> :w<CR>
 
 " color scheme
 colorscheme gruvbox
+set background=light
 
 " auto save custom changes
 let g:auto_save = 1
