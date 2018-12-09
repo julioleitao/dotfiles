@@ -39,7 +39,7 @@ Plugin 'kien/ctrlp.vim'
 Plugin 'editorconfig/editorconfig-vim'
 
 " Theme
-Plugin 'morhetz/gruvbox'
+Plugin 'altercation/vim-colors-solarized'
 
 " Auto save file
 Plugin '907th/vim-auto-save'
@@ -89,7 +89,7 @@ map <Esc><Esc> :w<CR>
 " See https://robots.thoughtbot.com/vim-splits-move-faster-and-more-naturally
 
 " color scheme
-colorscheme gruvbox
+colorscheme solarized
 set background=light
 
 " auto save custom changes
@@ -98,6 +98,7 @@ let g:auto_save_no_updatetime = 1
 let g:auto_save_in_insert_mode = 0
 
 " airline
+" show hour at the airline
 let g:airline_section_y = '%{strftime("%H:%M")}'
 
 ">>> end all custom commands
