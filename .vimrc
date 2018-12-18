@@ -83,6 +83,7 @@ set tabstop=4
 set number
 
 " http://vim.wikia.com/wiki/Saving_a_file
+" Ctrl + s and back to insert mode is a better way to do this
 map <Esc><Esc> :w<CR>
 
 " Switch between panes Swap top/bottom or left/right split. 
