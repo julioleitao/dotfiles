@@ -10,40 +10,31 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 
 " >>> Plugins list
-
 " The NERDTree is a file system explorer for the Vim editor
 Plugin 'scrooloose/nerdtree'
-
 " Languages plugin
 Plugin 'sheerun/vim-polyglot'
-
 " Code checks to find mistakes
 Plugin 'neomake/neomake'
-
 " lean & mean status/tabline for vim that's light as air
 Plugin 'vim-airline/vim-airline'
-
 " enable auto-close chars
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'tpope/vim-endwise'
-
 " autocomplete async
 Plugin 'maralla/completor.vim'
-
 " Search file
 Plugin 'kien/ctrlp.vim'
-
 " Editor config
 Plugin 'editorconfig/editorconfig-vim'
-
 " Theme
 Plugin 'altercation/vim-colors-solarized'
-
-" Auto save file
-Plugin '907th/vim-auto-save'
-
 " Save the file changes. Very helpful.
 Plugin 'mbbill/undotree'
+" Search in files
+Plugin 'mhinz/vim-grepper'
+" Amazing go to definition
+Plugin 'ludovicchabant/vim-gutentags'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required from vundle
@@ -65,6 +56,9 @@ let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclu
 " complete with tab
 inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 
+" >>> mhinz/vim-grepper
+nnoremap <leader>G :Grepper -tool ag -buffers<cr>
+
 " >>> just custom vim<<<
 syntax on
 set autoindent
@@ -81,16 +75,14 @@ map <Esc><Esc> :w<CR>
 nnoremap <Tab> :bn<CR>
 nnoremap <S-Tab> :bp<CR>
 
+" Search in the project
+nnoremap <S-F> :Grepper<CR>
+
 " Switch between panes Swap top/bottom or left/right split. 
 " See https://robots.thoughtbot.com/vim-splits-move-faster-and-more-naturally
 " color scheme
 colorscheme solarized
 set background=light
-
-" auto save custom changes
-let g:auto_save = 1
-let g:auto_save_no_updatetime = 1
-let g:auto_save_in_insert_mode = 0
 
 " airline
 " show hour at the airline
