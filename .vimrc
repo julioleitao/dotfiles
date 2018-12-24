@@ -1,5 +1,4 @@
-">>> end all custom commands
-filetype plugin indent on    " required from vundle
+set nocompatible              " be iMproved, required
 filetype off                  " required from vundle
 
 " set the runtime path to include Vundle and initialize
