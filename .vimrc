@@ -66,9 +66,11 @@ set shiftwidth=4
 set encoding=utf8
 set tabstop=4
 set number
+set backspace=indent,eol,start
+set cursorline
 
 " Based on http://vim.wikia.com/wiki/Saving_a_file
-map <Esc><Esc> :w<CR>
+map <Esc><Esc> :up<CR>
 
 " Based on http://vim.wikia.com/wiki/Switching_between_files
 nnoremap <Tab> :bn<CR>
@@ -82,6 +84,8 @@ nnoremap <S-F> :Grepper<CR>
 " color scheme
 colorscheme solarized
 set background=light
+set incsearch           " search as characters are entered
+set hlsearch            " highlight matches
 
 " airline
 " show hour at the airline
@@ -94,5 +98,9 @@ autocmd! BufWritePost * Neomake
 set undodir=~/.undodir/
 set undofile
 
+" >>> ludovicchabant/vim-gutentags
+let g:gutentags_cache_dir = '~/.tags_cache'
+
 ">>> end all custom commands
 filetype plugin indent on    " required from vundle
+
