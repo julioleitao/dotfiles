@@ -35,10 +35,7 @@ set incsearch           " search as characters are entered
 set hlsearch            " highlight matches
 
 map <C-n> :NERDTreeToggle<CR>
-" complete with tab. Used with completor.vim
 inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
-" mhinz/vim-grepper
-nnoremap <leader>G :Grepper -tool ag -buffers<cr>
 map <Esc><Esc> :up<CR>
 nnoremap <Tab> :bn<CR>
 nnoremap <S-Tab> :bp<CR>
@@ -47,7 +44,7 @@ nnoremap <S-F> :Grepper<CR>
 let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard'] " ignore files at .gitignore: kien/ctrlp.vim/issues/174
 let g:airline_section_y = '%{strftime("%H:%M")}' " show hour at the airline bar
 autocmd! BufWritePost * Neomake " required by neomake
-set undodir=~/.undodir/
+set undodir=/tmp/
 set undofile
 let g:gutentags_cache_dir = '~/.tags_cache'
 
