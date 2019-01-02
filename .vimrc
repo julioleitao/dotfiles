@@ -18,6 +18,7 @@ Plugin 'altercation/vim-colors-solarized'
 Plugin 'mbbill/undotree'
 Plugin 'mhinz/vim-grepper'
 Plugin 'ludovicchabant/vim-gutentags'
+Plugin '907th/vim-auto-save'
 call vundle#end()
 
 syntax on
@@ -36,7 +37,6 @@ set hlsearch            " highlight matches
 
 map <C-n> :NERDTreeToggle<CR>
 inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
-map <Esc><Esc> :up<CR>
 nnoremap <Tab> :bn<CR>
 nnoremap <S-Tab> :bp<CR>
 nnoremap <S-F> :Grepper<CR>
@@ -47,5 +47,7 @@ autocmd! BufWritePost * Neomake " required by neomake
 set undodir=/tmp/
 set undofile
 let g:gutentags_cache_dir = '~/.tags_cache'
+let g:auto_save = 1  " enable AutoSave on Vim startup
+let g:auto_save_events = ["InsertLeave"]
 
 filetype plugin indent on
