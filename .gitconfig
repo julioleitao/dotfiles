@@ -16,11 +16,25 @@
 	default = current
 [core]
 	autocrlf = input
-	pager = less -FRSX
 [alias]
 	ci = commit
 	co = checkout
 	st = status
 	ls = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate
+	diff-pretty = !git diff --color | diff-so-fancy | less --tabs=4 -RFX
+
 [url "git@github.com:julioleitao/"]
 	insteadOf = proj:
+
+[color "diff-highlight"]
+	oldNormal = red bold
+	oldHighlight = red bold 52
+	newNormal = green bold
+	newHighlight = green bold 22
+
+[color "diff"]
+	meta = yellow
+	frag = magenta bold
+	commit = yellow bold
+	old = red bold
+	whitespace = red reverse
