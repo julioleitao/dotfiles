@@ -30,12 +30,11 @@ set tabstop=4
 set number              " show line number
 set backspace=indent,eol,start
 set cursorline          " show a cursor line
-colorscheme solarized
 set background=light    
 set incsearch           " search as characters are entered
 set hlsearch            " highlight matches
 
-map <C-n> :NERDTreeToggle<CR>
+map <C-b> :NERDTreeToggle<CR>
 inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 nnoremap <Tab> :bn<CR>
 nnoremap <S-Tab> :bp<CR>
