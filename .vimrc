@@ -14,10 +14,7 @@ Plugin 'tpope/vim-endwise'
 Plugin 'maralla/completor.vim'
 Plugin 'kien/ctrlp.vim'
 Plugin 'editorconfig/editorconfig-vim'
-Plugin 'altercation/vim-colors-solarized'
-Plugin 'mbbill/undotree'
 Plugin 'mhinz/vim-grepper'
-Plugin 'ludovicchabant/vim-gutentags'
 Plugin '907th/vim-auto-save'
 call vundle#end()
 
@@ -30,7 +27,6 @@ set tabstop=4
 set number              " show line number
 set backspace=indent,eol,start
 set cursorline          " show a cursor line
-set background=light    
 set incsearch           " search as characters are entered
 set hlsearch            " highlight matches
 
@@ -43,9 +39,6 @@ nnoremap <S-F> :Grepper<CR>
 let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard'] " ignore files at .gitignore: kien/ctrlp.vim/issues/174
 let g:airline_section_y = '%{strftime("%H:%M")}' " show hour at the airline bar
 autocmd! BufWritePost * Neomake " required by neomake
-set undodir=/tmp/
-set undofile
-let g:gutentags_cache_dir = '~/.tags_cache'
 let g:auto_save = 1  " enable AutoSave on Vim startup
 let g:auto_save_events = ["InsertLeave"]
 
