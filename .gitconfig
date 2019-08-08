@@ -38,3 +38,6 @@
 	commit = yellow bold
 	old = red bold
 	whitespace = red reverse
+
+[merge]
+	tool = kdiff3
