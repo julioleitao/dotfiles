@@ -10,5 +10,6 @@ DOTFILES=(.vimrc .gitconfig)
 
 for file in ${DOTFILES[@]}; do
   wget https://raw.githubusercontent.com/julioleitao/dotfiles/master/${file}
-  mv ${file} $HOME
+  mv ${file} .${file}
+  mv .${file} $HOME
 done
